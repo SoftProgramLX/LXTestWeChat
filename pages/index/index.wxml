@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <modal title="提示" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel="modalChange">
+            {{modalText}}
+  </modal>
+
+  <view class="listview">
+    <block wx:for-items="{{datas}}" wx:for-item="item">
+      <view id="{{index}}" class="cellview" bindtap="didSelectCell" >
+        <image class="cellimage" mode="scaleToFill" src="{{item.large_avatar}}"/>
+        <view class="celllabel">
+          <text class="celltext" >{{item.name}}</text>
+          <text class="celldetail">{{item.desc}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
